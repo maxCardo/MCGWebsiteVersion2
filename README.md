@@ -1,5 +1,6 @@
 # MCGWebsiteVersion2
 Improved Rollout of MCG Website
+<<<<<<< HEAD
 
 Assets:
 
@@ -13,3 +14,6 @@ Trello- Join the projects slack linked trello board. Use this link: https://trel
 
 Project Discription:
 
+=======
+test connection with slack chan
+>>>>>>> 81458dae4ed30b28938397b76f80ad0dd9edcea5
