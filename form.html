@@ -9,7 +9,7 @@
 </head>
 <body id="main_body" >
 	<img id="top" src="top.png" alt="">
-	<div id="form_container">
+	<div id="form_container" margin-top:5px>
 			<h1><a>New User Registration</a></h1>
 			<form id="NewUserForm" onSubmit="send_form.php" method="post">					
 			<ul>
@@ -55,6 +55,7 @@
 				<label class="description" for="email">Email Address </label>
 				<input id="email" name="email" class="element text large" type="text" maxlength="100" value=""/> 
 			</div>
+			<div>
 				<label class="description" for="element_5">Date of Birth </label>
 				<span>
 					<input id="element_5_1" name="element_5_1" class="element text" size="2" maxlength="2" value="" type="text"> /
@@ -68,21 +69,9 @@
 					<input id="element_5_3" name="element_5_3" class="element text" size="4" maxlength="4" value="" type="text">
 					<label for="element_5_3">YYYY</label>
 			</span>
-			<span id="calendar_5">
-				<img id="cal_img_5" class="datepicker" src="calendar.gif" alt="Pick a date.">	
-			</span>
-			<script type="text/javascript">
-				Calendar.setup({
-				inputField	 : "element_5_3",
-				baseField    : "element_5",
-				displayArea  : "calendar_5",
-				button		 : "cal_img_5",
-				ifFormat	 : "%B %e, %Y",
-				onSelect	 : selectDate
-				});
-			</script>
-			<label class="description" for="element_6">House Number </label>
+			</div>
 			<div>
+				<label class="description" for="element_6">House Number </label>
 				<input id="element_6" name="element_6" class="element text small" type="text" maxlength="6" value=""/> 
 			</div>
 			<label class="description" for="element_7">Street Name </label>
