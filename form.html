@@ -9,10 +9,9 @@
 </head>
 <body id="main_body" >
 	<img id="top" src="top.png" alt="">
-	<div id="form_container" margin-top:5px>
+	<div id="form_container">
 			<h1><a>New User Registration</a></h1>
 			<form id="NewUserForm" onSubmit="send_form.php" method="post">					
-			<ul>
 			<div>
 				<label class="description" for="first">First Name </label>
 				<input id="first" name="first" class="element text medium" type="text" maxlength="50" value=""/> 
@@ -124,13 +123,9 @@
 				<input id="element_14_2" name="element_14" class="element radio" type="radio" value="2" />
 				<label class="choice" for="element_14_2">No</label>
 			</span> 
-			<li class="buttons">
-				<input type="hidden" name="form_id" value="20154" />
-				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-			</li>
-			</ul>
-			<input type="submit">
-			</div>
+			<class="buttons">
+			<input type="hidden" name="form_id" value="NewUserForm" />
+			<input id="submitButton" class="button_text" type="submit" name="submit" value="Submit" />
 			<img id="bottom" src="bottom.png" alt="">
 		</body>
 	</form>
