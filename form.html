@@ -56,34 +56,35 @@
 				<input id="email" name="email" class="element text large" type="text" maxlength="100" value=""/> 
 			</div>
 			<div>
-				<label class="description" for="element_5">Date of Birth </label>
+				<label class="description" for="dob">Date of Birth </label>
 				<span>
-					<input id="element_5_1" name="element_5_1" class="element text" size="2" maxlength="2" value="" type="text"> /
-					<label for="element_5_1">MM</label>
+					<input id="dob_month" name="dob_month" class="element text" size="2" maxlength="2" value="" type="text"> /
+					<label for="dob_month>MM</label>
 				</span>
 				<span>
-					<input id="element_5_2" name="element_5_2" class="element text" size="2" maxlength="2" value="" type="text"> /
-					<label for="element_5_2">DD</label>
+					<input id="dob_day" name="dob_day" class="element text" size="2" maxlength="2" value="" type="text"> /
+					<label for="dob_day">DD</label>
 				</span>
 				<span>
-					<input id="element_5_3" name="element_5_3" class="element text" size="4" maxlength="4" value="" type="text">
-					<label for="element_5_3">YYYY</label>
+					<input id="dob_year" name="dob_year" class="element text" size="4" maxlength="4" value="" type="text">
+					<label for="dob_year">YYYY</label>
 			</span>
 			</div>
+			<br>
 			<div>
-				<label class="description" for="element_6">House Number </label>
-				<input id="element_6" name="element_6" class="element text small" type="text" maxlength="6" value=""/> 
+				<label class="description" for="houseNum">House Number </label>
+				<input id="houseNum" name="houseNum" class="element text small" type="text" maxlength="6" value=""/> 
 			</div>
-			<label class="description" for="element_7">Street Name </label>
+			<label class="description" for="street">Street Name </label>
 			<div>
-			<input id="element_7" name="element_7" class="element text medium" type="text" maxlength="255" value=""/> 
+			<input id="street" name="street" class="element text medium" type="text" maxlength="60" value=""/> 
 			</div> 
-			<label class="description" for="element_8">City </label>
+			<label class="description" for="city">City </label>
 			<div>
-				<input id="element_8" name="element_8" class="element text medium" type="text" maxlength="255" value=""/> 
+				<input id="city" name="city" class="element text medium" type="text" maxlength="40" value=""/> 
 			</div> 
-			<label class="description" for="element_12">State </label>
-			<div>
+			<div>											    
+			<label class="description" for="state">State </label>
 			<select class="element select medium" id="element_12" name="element_12"> 
 				<option value="" selected="selected"></option>
 				<option value="1" >First option</option>
@@ -91,15 +92,16 @@
 				<option value="3" >Third option</option>
 			</select>
 			</div> 
-			<label class="description" for="element_10">Username </label>
+			<label class="description" for="userName">Username </label>
 			<div>
-				<input id="element_10" name="element_10" class="element text medium" type="text" maxlength="255" value=""/> 
-			</div>
 				<p class="guidelines" id="guide_10"><small>Please select a username.</small></p> 
+				<input id="userName" name="userName" class="element text medium" type="text" maxlength="16" value=""/> 
+			</div>
+			<div>	
 				<label class="description" for="element_11">Password </label>
-			<div>
 				<input id="element_11" name="element_11" class="element text medium" type="text" maxlength="255" value=""/> 
 			</div>
+			<div>
 				<p class="guidelines" id="guide_11"><small>Password must contain number, letters and one special character and be at least 8 characters in length.</small></p> 
 				<label class="description" for="element_13">How will you use the site? </label>
 			<span>
@@ -113,7 +115,8 @@
 				<label class="choice" for="element_13_4">Home Owner</label>
 				<input id="element_13_5" name="element_13" class="element radio" type="radio" value="5" />
 				<label class="choice" for="element_13_5">Property Mgmt Company</label>
-			</span> 
+			</span>
+			</div>
 			<label class="description" for="element_14">Would you like to receive news and informational emails relevant to you? </label>
 			<span>
 				<input id="element_14_1" name="element_14" class="element radio" type="radio" value="1" />
