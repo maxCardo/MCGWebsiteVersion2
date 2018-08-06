@@ -14,6 +14,15 @@ Trello- Join the projects slack linked trello board. Use this link: https://trel
 
 Project Discription:
 
-Intergrated with slack  (7/29/18ap)
+Live bata roll out of MCG maintenance platform for TLG portfolio. 
 
-tested testBranch (7/31/2018ap)
+	Phase 1 G-Doc bassed rollout
+	Phase 2 user form/DB roll out.  
+
+
+G Doc Maintenance form:  https://docs.google.com/forms/d/11Wgkj0CYfcn6fbhxbLoOQmGX4dSUQcelO9X2ec3nI_E/edit
+G Doc maintenance accept form: https://docs.google.com/forms/d/1vYCGx1riRPPuji4Id-4ox6RheaLh1uDYuQBxaQutyeY/edit
+G Doc Maintenance sheet: https://docs.google.com/spreadsheets/d/10DobbZAwD_4AJLJfPmQy5AwYis1PL_Ag-EzbtRRXfUc/edit#gid=804062435
+
+
+
