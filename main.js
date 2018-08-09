@@ -13,6 +13,8 @@ var webPay = ["conv1.html",""];
 var alreadyRes = "index.html#resident";
 var srvsRqst = "ServiceRequestGF.html";
 var contactUs = "contactGF.html";
+var webPay = ["https://levanongrp.managebuilding.com/Resident/PublicPages/Home.aspx?ReturnUrl=%2fResident%2fdefault.aspx"];
+
 
 
 
