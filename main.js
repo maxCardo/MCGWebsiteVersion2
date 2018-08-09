@@ -11,8 +11,10 @@ var webPay = ["conv1.html",""];
 
 //links for scroll down to section (action not tracked on GA) or link to another page on site
 var alreadyRes = "index.html#resident";
-var srvsRqst = "serviceRequestGF.html";
+var srvsRqst = "ServiceRequestGF.html";
 var contactUs = "contactGF.html";
+var webPay = ["https://levanongrp.managebuilding.com/Resident/PublicPages/Home.aspx?ReturnUrl=%2fResident%2fdefault.aspx"];
+
 
 
 
