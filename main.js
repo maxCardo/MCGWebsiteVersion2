@@ -5,7 +5,7 @@ var browseHomes = ["conv1.html","https://levanongrp.managebuilding.com/Resident/
 var joinNetwork = ["conv1.html","contactGF.html"];
 var vendorCenter = ["conv1.html","comingSoon.html"];
 var sellHome = ["conv1.html","sellYourHomeGF.html"];
-var webPay = ["conv1.html",""];
+//var webPay = ["conv1.html",""];
  
 
 
@@ -13,13 +13,17 @@ var webPay = ["conv1.html",""];
 var alreadyRes = "index.html#resident";
 var srvsRqst = "ServiceRequestGF.html";
 var contactUs = "contactGF.html";
-var webPay = ["https://levanongrp.managebuilding.com/Resident/PublicPages/Home.aspx?ReturnUrl=%2fResident%2fdefault.aspx"];
+var webPay = "https://levanongrp.managebuilding.com/Resident/PublicPages/Home.aspx?ReturnUrl=%2fResident%2fdefault.aspx";
 
 
 
 
 function buttonScroll(arg){
 	window.open(arg, '_top');
+}
+
+function buttonNewWindow(arg){
+	window.open(arg, '_blank');
 }
 
 function buttonLink(arg){
