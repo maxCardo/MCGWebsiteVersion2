@@ -2,6 +2,8 @@
 Improved Rollout of MCG Website
 <<<<<<< HEAD
 
+9/13/18 - Scott moved contents of MCGWebsiteVersion2 to ScottLocalMCG folder and reinitialized to Git repository
+
 Assets:
 
 Keep track of progress and streamline colaberitive communication with slack and Trello.
