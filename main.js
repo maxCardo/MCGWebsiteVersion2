@@ -36,3 +36,24 @@ function convLink(){
 		console.log(par);
 		setTimeout(function() {window.open(par[1],'_top');}, 50);
 }
+
+$(document).ready(function()) {
+$("#uSwitch").change(function(){
+	var checked = $(this).children(":checked").val();
+	switch (checked) {
+		case 1:
+			$("#NewUserForm").attr('action','res-registration.php');
+			break;
+		case 2:
+			$("#NewUserForm").attr('action','con-registration.php');
+			break;
+		case 3:
+			$("#NewUserForm").attr('action', 'sa-registration.php');
+			break;
+		case 4:
+		case 5:
+			$("#NewUserForm").attr('action', 'hopm-registration.php');
+			break;
+		}
+	});
+});

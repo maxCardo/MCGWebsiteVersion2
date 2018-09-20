@@ -1,17 +1,15 @@
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>New User Registration</title>
 <link rel="stylesheet" type="text/css" href="style.css" media="all">
-<script type="text/javascript" src="view.js"></script>
-<script type="text/javascript" src="calendar.js"></script>
 </head>
 <body id="main_body" class="formBody">
-	<img id="top" src="top.png" alt="">
 	<div id="form_container">
 		<h1><a>New User Registration</a></h1>
-		<form id="NewUserForm" action="send_post.php" method="post">					
+		<form id="NewUserForm" action="" method="post">					
 			<label class="description" for="first">First Name </label>
 			<input required name="first" class="elementtextmed" type="text" maxlength="50" value=""/> 
 			<br>
@@ -41,7 +39,7 @@
 			<input id="city" name="city" class="elementtextmed" type="text" maxlength="40" value=""/> 			
 			<br>							    
 			<label class="description" for="state">State </label>
-			<input size="3" maxlength="2" name="state"> 
+			<input size="3" maxlength="2" name="state" value="PA"> 
 			<br>
 			<label class="description" for="userName">Choose a Username </label>
 			<input id="userName" name="userName" class="elementtextmed" type="text" maxlength="20" value=""/> 
@@ -51,11 +49,11 @@
 			<br>
 			<label class="description" for="userType">Are you a...? </label>
 			<br>
-			<input name="userType" type="radio" value="1"/> Resident<br>
-			<input name="userType" type="radio" value="2"/> Contractor<br>
-			<input name="userType" type="radio" value="3"/> Showing Agent<br>
-			<input name="userType" type="radio" value="4"/> HomeOwner<br>
-			<input name="userType" type="radio" value="5"/> Property Mgmt Company<br>
+			<input name="userType" type="radio" value="res-registration"/> Resident<br>
+			<input name="userType" type="radio" value="con-registration"/> Contractor<br>
+			<input name="userType" type="radio" value="sa-registration"/> Showing Agent<br>
+			<input name="userType" type="radio" value="hopm-registration"/> HomeOwner<br>
+			<input name="userType" type="radio" value="hopm-registration"/> Property Mgmt Company<br>
 			<label class="description" for="optIn">Would you like to receive news and informational emails relevant to you? </label>
 			<br>
 			<span>
@@ -63,9 +61,22 @@
 				<input name="optIn" type="radio" value="N"/> No
 			</span> 
 			<br>
-			<input id="submitButton" class="button_text" type="submit" name="submit" value="Submit Registration" />
-			<img id="bottom" src="bottom.png" alt="">
+			<input id="nextButton" class="button_text" type="submit" name="submit" value="Next" />
 		</form>
 	</div>
 </body>
 </html>
+
+
+<script>
+	//Ensure Passwords match
+	function validatePass(input){
+		var pass = document.getElementByName("password").value;
+		if (input.value !== pass)
+			document.getElementByName("passCheck").value = "";
+	}
+
+	$('input[name=userType]').change(function(){
+		$('#NewUserForm').attr("action", $('input[name=userType]:checked').val() + ".php");
+	});
+</script>

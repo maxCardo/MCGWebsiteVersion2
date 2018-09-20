@@ -1,12 +1,12 @@
 <form method="post" action="getUser.php"> 
 	<?php session_start(); ?>
-	Username : <input type="text" maxlength="30" tabindex=1 name="uName" onkeyup="validate(this)" required>
-	<a href="form.html" tabindex=4 style="font-size: 12px">New User? Register Here</a><br>
+	Username : <input type="text" maxlength="20" tabindex=1 name="uName" onkeydown="javascript:validate(this)" required>
+	<a href="registration.html" tabindex=4 style="font-size: 12px">New User? Register Here</a><br>
 	Password : <input type="password" maxlength="16" tabindex=2 name="pWord" required>
-	<a href="" tabindex=5 style="font-size: 12px;"> Forgot Password?</a><br>
+	<a href="passReset.php" tabindex=5 style="font-size: 12px;"> Forgot Password?</a><br>
 	<input type="submit" tabindex=3/>
 	<?php if(isset($_SESSION['error'])){ 
-		echo '<a style="font-size:12px; color:red; padding-left: 20px;"" >' . $_SESSION['error'] . "</a>"; 
+		echo '<a name="errLabel" style="font-size:12px; color:red; padding-left: 20px;"" >' . $_SESSION['error'] . "</a>"; 
 		unset($_SESSION['error']);}
 	?>
 </form>
@@ -34,7 +34,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 <script>
 	function validate(input){
+		var check = input.value;
 		var regex = /[^a-z0-9]/gi;
-		input.replace(regex, "");
+		input.value = input.value.replace(regex, "");
 	}
 </script>
