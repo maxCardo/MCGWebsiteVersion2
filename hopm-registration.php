@@ -8,7 +8,7 @@
 <body id="main_body" class="formBody">
 	<div id="form_container">
 		<h1><a>Registration Cont'd.</a></h1>
-		<form id="hopmReg" action="send_post.php" method="post">					
+		<form id="hopmReg" action="hopm-registration.php" method="post">					
 			<label class="description" for="address">Address </label>
 			<input id="street" name="address" class="elementtextmed" type="text" maxlength="80"/> 
 			<br>

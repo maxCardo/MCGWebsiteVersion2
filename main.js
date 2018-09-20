@@ -37,23 +37,29 @@ function convLink(){
 		setTimeout(function() {window.open(par[1],'_top');}, 50);
 }
 
-$(document).ready(function()) {
-$("#uSwitch").change(function(){
-	var checked = $(this).children(":checked").val();
-	switch (checked) {
-		case 1:
-			$("#NewUserForm").attr('action','res-registration.php');
-			break;
-		case 2:
-			$("#NewUserForm").attr('action','con-registration.php');
-			break;
-		case 3:
-			$("#NewUserForm").attr('action', 'sa-registration.php');
-			break;
-		case 4:
-		case 5:
-			$("#NewUserForm").attr('action', 'hopm-registration.php');
-			break;
-		}
-	});
-});
+function buildPage(file){
+	var html = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+				<html xmlns="http://www.w3.org/1999/xhtml">
+				<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>New User Registration</title>
+<link rel="stylesheet" type="text/css" href="style.css" media="all">
+</head>
+<body id="main_body" class="formBody">
+	<div class="w3-top">
+    	<div class="w3-bar w3-white w3-card" id="myNavbar" style="padding: 0px 20px">
+    		<a href="index.html" class="w3-bar-item w3-button w3-wide">
+    			<span class="tlgMed" style="color:black">The Levanon Group</span> <span class="tlgSmall" style="color:black">LLC</span>   
+    		</a>
+		</div>
+	</div>
+	</div>
+</body>
+</html>';
+	$("'#" + file + "'").empty().append(html);
+}

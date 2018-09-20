@@ -16,19 +16,4 @@ if ($conn->query($sql) !== TRUE)
 	echo "Error: " . $sql . "<br>" . $conn->error; 
 $conn->close();
 $_SESSION['user'] = $POST['first'];
-switch ($_POST['userType'){
-	case 1: //Resident
-		header('Location:res-register.html');
-		break;
-	case 2: //Contractor
-		header('Location:con-register.html');
-		break;
-	case 3: //Showing Agent
-		header('Location:sa-register.html');
-		break;
-	case 4: //Home Owner
-	case 5: //Property Owners
-		header('Location:hopm-register.html');
-		break;
-}
 ?>

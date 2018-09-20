@@ -1,21 +1,28 @@
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<?php include("PageElements/header.html"); ?>
 <title>New User Registration</title>
-<link rel="stylesheet" type="text/css" href="style.css" media="all">
+<?php include("PageElements/navbar.html"); ?>
+<link rel="stylesheet" href="style.css" media="all">
 </head>
 <body id="main_body" class="formBody">
+	<div class="w3-top">
+    	<div class="w3-bar w3-white w3-card" id="myNavbar" style="padding: 0px 20px">
+    		<a href="index.html" class="w3-bar-item w3-button w3-wide">
+    			<span class="tlgMed" style="color:black">The Levanon Group</span> <span class="tlgSmall" style="color:black">LLC</span>   
+    		</a>
+		</div>
+	</div>
 	<div id="form_container">
-		<h1><a>New User Registration</a></h1>
+		<h2><a>New User Registration</a></h2>
 		<form id="NewUserForm" action="" method="post">					
 			<label class="description" for="first">First Name </label>
 			<input required name="first" class="elementtextmed" type="text" maxlength="50" value=""/> 
 			<br>
 			<label class="description" for="last ">Last Name </label>
 			<input required name="last" class="elementtextmed" type="text" maxlength="60" value=""/> 
-			<br>
+			<p>
 			<label class="description" for="phone1">Primary Phone Number </label>
 			<br>
 			<input required name="phone1" size=14 maxlength="12" value="###-###-####" type="text">
@@ -23,37 +30,23 @@
 			<label class="description" for="phone2">Secondary Phone Number </label>
 			<br>
 			<input name="phone2" size=14 maxlength="12" value="###-###-####" type="text">
-			<br>
-			<label class="description" for="email">Email Address </label>
-			<br>
-			<input id="email" name="email" class="elementtextlg" type="text" maxlength="100" value=""/> 
-			<br>
-			<label class="description" for="dob">Date of Birth</label>
-			<br>
-			<input id="dob" name="dob" class="elementtextmed" type="date">
-			<br>
-			<label class="description" for="address">Address </label>
-			<input id="street" name="address" class="elementtextmed" type="text" maxlength="80" value=""/> 
-			<br>
-			<label class="description" for="city">City </label>
-			<input id="city" name="city" class="elementtextmed" type="text" maxlength="40" value=""/> 			
-			<br>							    
-			<label class="description" for="state">State </label>
-			<input size="3" maxlength="2" name="state" value="PA"> 
+			<p>
+			<label class="description" for="email">Email </label>
+			<input required id="email" name="email" class="elementtextlg" type="text" maxlength="60"/> 
 			<br>
 			<label class="description" for="userName">Choose a Username </label>
-			<input id="userName" name="userName" class="elementtextmed" type="text" maxlength="20" value=""/> 
+			<input required id="userName" name="userName" class="elementtextmed" type="text" maxlength="20"/> 
 			<br>
 			<label class="description" for="password">Password </label>
-			<input name="password" class="elementtextmed" type="password" maxlength="16" value=""/> 
+			<input required id="p" name="password" class="elementtextmed" type="password" maxlength="16"/> 
 			<br>
 			<label class="description" for="userType">Are you a...? </label>
 			<br>
-			<input name="userType" type="radio" value="res-registration"/> Resident<br>
+			<input required name="userType" type="radio" value="res-registration"/> Resident<br>
 			<input name="userType" type="radio" value="con-registration"/> Contractor<br>
 			<input name="userType" type="radio" value="sa-registration"/> Showing Agent<br>
 			<input name="userType" type="radio" value="hopm-registration"/> HomeOwner<br>
-			<input name="userType" type="radio" value="hopm-registration"/> Property Mgmt Company<br>
+			<input name="userType" type="radio" value="hopm-registration"/> Property Mgmt Company<p>
 			<label class="description" for="optIn">Would you like to receive news and informational emails relevant to you? </label>
 			<br>
 			<span>
@@ -61,21 +54,15 @@
 				<input name="optIn" type="radio" value="N"/> No
 			</span> 
 			<br>
-			<input id="nextButton" class="button_text" type="submit" name="submit" value="Next" />
+			<input id="next" type="submit" value="Continue"/>
 		</form>
 	</div>
 </body>
+<?php include("PageElements/footer.html"); ?>
 </html>
 
 
 <script>
-	//Ensure Passwords match
-	function validatePass(input){
-		var pass = document.getElementByName("password").value;
-		if (input.value !== pass)
-			document.getElementByName("passCheck").value = "";
-	}
-
 	$('input[name=userType]').change(function(){
 		$('#NewUserForm').attr("action", $('input[name=userType]:checked').val() + ".php");
 	});

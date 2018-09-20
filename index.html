@@ -1,72 +1,12 @@
-<?php
-  session_start();
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115757735-1"></script>
-    <script src="https://app.engati.com/static/js/chat_widget.js"></script>
-    <script>
-      session_start();
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-115757735-1');
-    </script>
-    <!--============================= End GA Tag =========================================== -->
-
+    <?php include("PageElements/header.html"); ?>
     <title>The Levanon Group</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
     
   <body>
-  <!-- Navbar (sit on top) -->
-  <div class="w3-top">
-    <div class="w3-bar w3-white w3-card" id="myNavbar" style="padding: 0px 20px">
-      <a href="#home" class="w3-bar-item w3-button w3-wide">
-        <span class="tlgMed">The Levanon Group</span> <span class="tlgSmall">LLC</span>   
-      </a>
-      <!-- Right-sided navbar links -->
-      <div class="w3-right w3-tiny w3-hide-small" style="margin-top: 10px">
-        <!-- <a href="#about" class="w3-bar-item w3-button">ABOUT US</a>
-        <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-home"></i> APARTMENT RENTAL CENTER</a> -->
-        <a href="#resident" class="w3-bar-item w3-button"><i class="fa fa-th"></i> RESIDENT</a>
-        <a href="#pros" class="w3-bar-item w3-button"><i class="fa fa-wrench"></i> CONTRACTOR</a>
-        <a href=#owners" class="w3-bar-item w3-button"><i class="fa fa-home"></i> PROPERTY OWNER</a>
-        <!-- <a href="#buy" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> SELL YOUR PROPERTY AT FULL VALUE</a> -->
-        <a href="contactGF.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT US</a>
-        <a href="getUser.php" class="w3-bar-item-w3-button"><i class="fa fa-navicon" style="padding-top: 13px"></i> ACCOUNT</a>
-      </div>
-      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
-
-      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-    <?php 
-      echo "Welcome, " . $_SESSION['firstName'];
-    ?>
-  </div>
-
-  <!-- Sidebar on small screens when clicking the menu icon -->
-  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-    <!-- <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About Us</a>
-    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Apartment Rentals</a> -->
-   <!--  <a href="#buy" onclick="w3_close()" class="w3-bar-item w3-button">Sell Your Property</a> -->
-    <a href="#resident" onclick="w3_close()" class="w3-bar-item w3-button">Current Resident</a>
-    <a href="index.html#pros" onclick="w3_close()" class="w3-bar-item w3-button">Service Pro's</a>
-    <a href="contactGF.html" onclick="w3_close()" class="w3-bar-item w3-button">Contact Us</a>
-  </nav>
+  <?php include("PageElements/navbar.html"); ?>
 
   <!-- Header with full-height image -->
   <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
@@ -225,23 +165,7 @@
   </div>
   -->
 
-
-  <!-- Footer -->
-  <footer class="w3-center w3-black w3-padding-64">
-    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-    <div class="w3-xlarge w3-section">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
-    </div>
-    
-  </footer>
-
-  <!-- engotti chat bot 
-   <script>EngtChat.init({"bot_key": "6bfd9388ea204ad4", "e":"p", "bot_name":"Tara","welcome_msg":true, "branding_key":"default" });</script>-->
+  <?php include("PageElements/footer.html"); ?>
 
   <script>
 

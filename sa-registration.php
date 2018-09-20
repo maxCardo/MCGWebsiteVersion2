@@ -9,7 +9,7 @@
 	<img id="top" src="top.png" alt="">
 	<div id="form_container">
 		<h1><a>Registration Cont'd.</a></h1>
-		<form id="saReg" action="send_post.php" method="post">					
+		<form id="saReg" action="sa-registration.php" method="post">					
 			<label class="description" for="address">Address </label>
 			<input id="street" name="address" class="elementtextmed" type="text" maxlength="80"/> 
 			<br>
