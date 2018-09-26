@@ -8,21 +8,21 @@ include("PageElements/navbar.html"); ?>
 		<form style="width: 35%" id="NewUserForm" action="" method="post">
 			<br>					
 			<label class="form-control-label" for="first">First Name </label>
-			<input required name="first" class="form-control-sm" type="text" maxlength="50" value=""/><br> 
+			<input required name="first" class="form-control-sm" type="text" maxlength="30" value=""/><br> 
 			<label class="form-control-label" for="last ">Last Name </label>
-			<input required name="last" class="form-control-sm" type="text" maxlength="60" value=""/><br> 
+			<input required name="last" class="form-control-sm" type="text" maxlength="50" value=""/><br> 
 			<hr>
 			<label class="form-control-label" for="phone1">Primary Phone Number </label>
-			<input required class="form-control-sm" name="phone1" size=14 maxlength="12" placeholder="###-###-####" type="text"><br>
+			<input required class="form-control-sm" name="phone1" size=16 maxlength="12" placeholder="###-###-####" type="tel" pattern="[2-9][0-9]{2}-[0-9]{3}-[0-9]{4}" title="###-###-####"><br>
 			<label class="form-control-label" for="phone2">Secondary Phone Number </label>
-			<input class="form-control-sm" name="phone2" size=14 maxlength="12" placeholder="###-###-####" type="text"> <br>
+			<input class="form-control-sm" name="phone2" size=16 maxlength="12" placeholder="###-###-####" type="tel" pattern="[2-9][0-9]{2}-[0-9]{3}-[0-9]{4}" title="###-###-####"> <br>
 			<label class="form-control-label" for="email">Email </label>
 			<input required id="email" name="email" class="form-control-sm" type="text" maxlength="60"/><br> 
 			<hr>
 			<label class="form-control-label" for="userName">Choose a Username </label>
-			<input required id="userName" name="userName" class="form-control-sm" type="text" maxlength="20"/><br> 
+			<input required id="userName" name="userName" class="form-control-sm" type="text" maxlength="16" pattern="[a-z A-Z][a-zA-Z0-9]{6,16}" title="Username must start with a letter, contain no special characters and be between 6 and 16 characters in length."/><br> 
 			<label class="form-control-label" for="password">Password </label>
-			<input required id="p" class="form-control-sm" name="password" class="form-control-sm" type="password" maxlength="16"/><br>
+			<input required id="p" class="form-control-sm" name="password" class="form-control-sm" type="password" maxlength="16" pattern="[0-9a-zA-Z!@#$%&]{8,16}" title="Password may be between 8 and 16 letters, numbers and (! @ # $ % &)"/><br>
 			<hr> 
 			<label style="font-size:11pt" class="form-control-label" for="userType">How will you use this site? </label>
 			<br>
@@ -33,12 +33,12 @@ include("PageElements/navbar.html"); ?>
 			<input name="userType" type="radio" value="hopm-registration"/> Property Mgmt Company<br>
 			<br>
 			<label style="font-size: 11pt" class="form-control-label" for="hdyhau">How did you hear about us?</label><br>
-			<input name="hdyhau" class="radio" type="radio" value=1/> Flier<br>
-			<input name="hdyhau" class="radio" type="radio" value=2/> Marketing Email<br>
-			<input name="hdyhau" class="radio" type="radio" value=3/> Referral<br>
-			<input name="hdyhau" class="radio" type="radio" value=4/> Prop Mgmt Company<br>
-			<input name="hdyhau" class="radio" type="radio" value=5/> Craigslist<br>
-			<input name="hdyhau" class="radio" type="radio" value=6/> Google<br>
+			<input name="hdyhau" class="radio" type="radio" value="1"/> Flier<br>
+			<input name="hdyhau" class="radio" type="radio" value="2"/> Marketing Email<br>
+			<input name="hdyhau" class="radio" type="radio" value="3"/> Referral<br>
+			<input name="hdyhau" class="radio" type="radio" value="4"/> Prop Mgmt Company<br>
+			<input name="hdyhau" class="radio" type="radio" value="5"/> Craigslist<br>
+			<input name="hdyhau" class="radio" type="radio" value="6"/> Google<br>
 			<br>
 			<label style="font-size:11pt" class="form-control-label" for="optIn">Would you like to receive news and informational emails relevant to you? </label>
 			<br>
@@ -52,15 +52,6 @@ include("PageElements/navbar.html"); ?>
 </body>
 
 <?php include("PageElements/footer.html");
-	if(isset($_POST['first'])){
-		$_SESSION['first'] = $_POST['first'];
-		$_SESSION['last'] = $_POST['last'];
-		$_SESSION['phone1'] = $_POST['phone1'];
-		$_SESSION['phone2'] = $_POST['phone2']; 
-		$_SESSION['email'] = $_POST['email'];
-		$_SESSION['userName'] = $_POST['userName'];
-		$_SESSION['password'] = $_POST['password'];
-	}
  ?>
 
 </html>

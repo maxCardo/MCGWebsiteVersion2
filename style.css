@@ -3,6 +3,12 @@ body, html {
     height: 100%;
     line-height: 1.8;
 }
+
+/*Toggle Company Section Visibility */
+.compSec{
+  display: none;
+}
+
 /* Full height image header */ 
 .bgimg-1 {
     background-position: center;
@@ -42,6 +48,7 @@ body, html {
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
+
 
 .tlgSmall, .tlgMed, .tlgLg{
   font-family:Brush Script MT;
