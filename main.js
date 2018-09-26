@@ -15,7 +15,35 @@ var srvsRqst = "ServiceRequestGF.html";
 var contactUs = "contactGF.html";
 var webPay = "https://levanongrp.managebuilding.com/Resident/PublicPages/Home.aspx?ReturnUrl=%2fResident%2fdefault.aspx";
 
+// Modal Image Gallery
+function onClick(element) {
+document.getElementById("img01").src = element.src;
+document.getElementById("modal01").style.display = "block";
+var captionText = document.getElementById("caption");
+captionText.innerHTML = element.alt;
+}
 
+
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+  } else {
+      mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+}
+
+function  buttonLinkDelay(arg){
+	alert(arg);
+	//window.open(arg,'_top');
+}
 
 
 function buttonScroll(arg){
@@ -36,30 +64,8 @@ function convLink(){
 		console.log(par);
 		setTimeout(function() {window.open(par[1],'_top');}, 50);
 }
-
-function buildPage(file){
-	var html = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-				<html xmlns="http://www.w3.org/1999/xhtml">
-				<head>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>New User Registration</title>
-<link rel="stylesheet" type="text/css" href="style.css" media="all">
-</head>
-<body id="main_body" class="formBody">
-	<div class="w3-top">
-    	<div class="w3-bar w3-white w3-card" id="myNavbar" style="padding: 0px 20px">
-    		<a href="index.html" class="w3-bar-item w3-button w3-wide">
-    			<span class="tlgMed" style="color:black">The Levanon Group</span> <span class="tlgSmall" style="color:black">LLC</span>   
-    		</a>
-		</div>
-	</div>
-	</div>
-</body>
-</html>';
-	$("'#" + file + "'").empty().append(html);
-}
+function validate(input){
+		var check = input.value;
+		var regex = /[^a-z0-9]/gi;
+		input.value = input.value.replace(regex, "");
+	}

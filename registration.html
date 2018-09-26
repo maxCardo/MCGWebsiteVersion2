@@ -1,64 +1,68 @@
- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<?php include("PageElements/header.html"); ?>
+<?php include("PageElements/header.html");
+include("PageElements/navbar.html"); ?>
 <title>New User Registration</title>
-<?php include("PageElements/navbar.html"); ?>
-<link rel="stylesheet" href="style.css" media="all">
-</head>
-<body id="main_body" class="formBody">
-	<div class="w3-top">
-    	<div class="w3-bar w3-white w3-card" id="myNavbar" style="padding: 0px 20px">
-    		<a href="index.html" class="w3-bar-item w3-button w3-wide">
-    			<span class="tlgMed" style="color:black">The Levanon Group</span> <span class="tlgSmall" style="color:black">LLC</span>   
-    		</a>
-		</div>
-	</div>
-	<div id="form_container">
-		<h2><a>New User Registration</a></h2>
-		<form id="NewUserForm" action="" method="post">					
-			<label class="description" for="first">First Name </label>
-			<input required name="first" class="elementtextmed" type="text" maxlength="50" value=""/> 
-			<br>
-			<label class="description" for="last ">Last Name </label>
-			<input required name="last" class="elementtextmed" type="text" maxlength="60" value=""/> 
-			<p>
-			<label class="description" for="phone1">Primary Phone Number </label>
-			<br>
-			<input required name="phone1" size=14 maxlength="12" value="###-###-####" type="text">
-			<br>
-			<label class="description" for="phone2">Secondary Phone Number </label>
-			<br>
-			<input name="phone2" size=14 maxlength="12" value="###-###-####" type="text">
-			<p>
-			<label class="description" for="email">Email </label>
-			<input required id="email" name="email" class="elementtextlg" type="text" maxlength="60"/> 
-			<br>
-			<label class="description" for="userName">Choose a Username </label>
-			<input required id="userName" name="userName" class="elementtextmed" type="text" maxlength="20"/> 
-			<br>
-			<label class="description" for="password">Password </label>
-			<input required id="p" name="password" class="elementtextmed" type="password" maxlength="16"/> 
-			<br>
-			<label class="description" for="userType">Are you a...? </label>
+
+<body id="regBody" class="formBody">
+	<div id="form_container" style="margin:75px 40px">
+		<h3><u>New User Registration</u></h3>
+		<form style="width: 35%" id="NewUserForm" action="" method="post">
+			<br>					
+			<label class="form-control-label" for="first">First Name </label>
+			<input required name="first" class="form-control-sm" type="text" maxlength="50" value=""/><br> 
+			<label class="form-control-label" for="last ">Last Name </label>
+			<input required name="last" class="form-control-sm" type="text" maxlength="60" value=""/><br> 
+			<hr>
+			<label class="form-control-label" for="phone1">Primary Phone Number </label>
+			<input required class="form-control-sm" name="phone1" size=14 maxlength="12" placeholder="###-###-####" type="text"><br>
+			<label class="form-control-label" for="phone2">Secondary Phone Number </label>
+			<input class="form-control-sm" name="phone2" size=14 maxlength="12" placeholder="###-###-####" type="text"> <br>
+			<label class="form-control-label" for="email">Email </label>
+			<input required id="email" name="email" class="form-control-sm" type="text" maxlength="60"/><br> 
+			<hr>
+			<label class="form-control-label" for="userName">Choose a Username </label>
+			<input required id="userName" name="userName" class="form-control-sm" type="text" maxlength="20"/><br> 
+			<label class="form-control-label" for="password">Password </label>
+			<input required id="p" class="form-control-sm" name="password" class="form-control-sm" type="password" maxlength="16"/><br>
+			<hr> 
+			<label style="font-size:11pt" class="form-control-label" for="userType">How will you use this site? </label>
 			<br>
 			<input required name="userType" type="radio" value="res-registration"/> Resident<br>
 			<input name="userType" type="radio" value="con-registration"/> Contractor<br>
 			<input name="userType" type="radio" value="sa-registration"/> Showing Agent<br>
 			<input name="userType" type="radio" value="hopm-registration"/> HomeOwner<br>
-			<input name="userType" type="radio" value="hopm-registration"/> Property Mgmt Company<p>
-			<label class="description" for="optIn">Would you like to receive news and informational emails relevant to you? </label>
+			<input name="userType" type="radio" value="hopm-registration"/> Property Mgmt Company<br>
 			<br>
-			<span>
-				<input name="optIn" type="radio" value="Y"/> Yes
-				<input name="optIn" type="radio" value="N"/> No
-			</span> 
+			<label style="font-size: 11pt" class="form-control-label" for="hdyhau">How did you hear about us?</label><br>
+			<input name="hdyhau" class="radio" type="radio" value=1/> Flier<br>
+			<input name="hdyhau" class="radio" type="radio" value=2/> Marketing Email<br>
+			<input name="hdyhau" class="radio" type="radio" value=3/> Referral<br>
+			<input name="hdyhau" class="radio" type="radio" value=4/> Prop Mgmt Company<br>
+			<input name="hdyhau" class="radio" type="radio" value=5/> Craigslist<br>
+			<input name="hdyhau" class="radio" type="radio" value=6/> Google<br>
+			<br>
+			<label style="font-size:11pt" class="form-control-label" for="optIn">Would you like to receive news and informational emails relevant to you? </label>
+			<br>
+			<input class="radio-inline" name="optIn" type="radio" value="Y"/> Yes
+			<input class="radio-inline" name="optIn" type="radio" value="N"/> No
+			<br>
 			<br>
 			<input id="next" type="submit" value="Continue"/>
 		</form>
 	</div>
 </body>
-<?php include("PageElements/footer.html"); ?>
+
+<?php include("PageElements/footer.html");
+	if(isset($_POST['first'])){
+		$_SESSION['first'] = $_POST['first'];
+		$_SESSION['last'] = $_POST['last'];
+		$_SESSION['phone1'] = $_POST['phone1'];
+		$_SESSION['phone2'] = $_POST['phone2']; 
+		$_SESSION['email'] = $_POST['email'];
+		$_SESSION['userName'] = $_POST['userName'];
+		$_SESSION['password'] = $_POST['password'];
+	}
+ ?>
+
 </html>
 
 

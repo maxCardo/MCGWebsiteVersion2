@@ -65,15 +65,35 @@ body, html {
 }
 
 .elementtextsm{
+   height: 20px;
    width: 4em;
 }
 
 .elementtextmed{
+  height: 20px;
   width: 12em;
 }
 
 .elementtextlg{
+  height: 20px;
   width: 20em;
+}
+
+.rowHead{
+  text-align:right;
+  width:20px;
+}
+
+.tblButtons{
+  display: block;
+  margin:auto;
+  outline-width: 2px;
+  width: 75%;
+}
+
+.colHead{
+  text-align:center;
+  width:20px;
 }
 
 /* Turn off parallax scrolling for tablets and phones */

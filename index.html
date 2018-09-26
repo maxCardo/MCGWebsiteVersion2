@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <?php include("PageElements/header.html"); ?>
-    <title>The Levanon Group</title>
-  </head>
-    
-  <body>
-  <?php include("PageElements/navbar.html"); ?>
+<?php include("PageElements/header.html"); 
+include("PageElements/navbar.html"); ?>
+<title>The Levanon Group</title>
 
-  <!-- Header with full-height image -->
-  <header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+<body id="mainBody" class="formBody">
+  <div class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
     <div class="w3-display-left w3-text-white" style="padding:48px">
       <span class="w3-jumbo w3-hide-small">Rethink Property Managment</span><br>
       <span class="w3-xlarge w3-hide-large w3-hide-medium" >Rethink Property Managment</span><br>
@@ -17,7 +11,7 @@
       <span class="w3-small w3-hide-large w3-hide-medium" >Simple Tech Based Solution for Rental Owners and Residents.</span><br>
     </div> 
 
-  </header>
+  </div>
     
   <!-- About Section 
   <div class="w3-container" style="padding:85px 16px" id="about">
@@ -165,41 +159,4 @@
   </div>
   -->
 
-  <?php include("PageElements/footer.html"); ?>
-
-  <script>
-
-  // Modal Image Gallery
-  function onClick(element) {
-    document.getElementById("img01").src = element.src;
-    document.getElementById("modal01").style.display = "block";
-    var captionText = document.getElementById("caption");
-    captionText.innerHTML = element.alt;
-  }
-
-
-  // Toggle between showing and hiding the sidebar when clicking the menu icon
-  var mySidebar = document.getElementById("mySidebar");
-
-  function w3_open() {
-      if (mySidebar.style.display === 'block') {
-          mySidebar.style.display = 'none';
-      } else {
-          mySidebar.style.display = 'block';
-      }
-  }
-
-  // Close the sidebar with the close button
-  function w3_close() {
-      mySidebar.style.display = "none";
-  }
-
-  function  buttonLinkDelay(arg){
-  	alert(arg);
-  	//window.open(arg,'_top');
-  }
-  </script>
-
-  	<script src="main.js"></script>
-  </body>
-</html>
+<?php include("PageElements/footer.html"); ?>
