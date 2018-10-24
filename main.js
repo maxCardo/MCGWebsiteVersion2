@@ -15,7 +15,34 @@ var srvsRqst = "ServiceRequestGF.html";
 var contactUs = "contactGF.html";
 var webPay = "https://levanongrp.managebuilding.com/Resident/PublicPages/Home.aspx?ReturnUrl=%2fResident%2fdefault.aspx";
 
+// Modal Image Gallery
+function onClick(element) {
+document.getElementById("img01").src = element.src;
+document.getElementById("modal01").style.display = "block";
+var captionText = document.getElementById("caption");
+captionText.innerHTML = element.alt;
+}
 
+// Toggle between showing and hiding the sidebar when clicking the menu icon
+var mySidebar = document.getElementById("mySidebar");
+
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+      mySidebar.style.display = 'none';
+  } else {
+      mySidebar.style.display = 'block';
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+}
+
+function  buttonLinkDelay(arg){
+	alert(arg);
+	//window.open(arg,'_top');
+}
 
 
 function buttonScroll(arg){
@@ -36,5 +63,8 @@ function convLink(){
 		console.log(par);
 		setTimeout(function() {window.open(par[1],'_top');}, 50);
 }
-
-
+function validate(input){
+		var check = input.value;
+		var regex = /[^a-z0-9]/gi;
+		input.value = input.value.replace(regex, "");
+	}

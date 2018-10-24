@@ -1,0 +1,57 @@
+  <!-- Navbar (sit on top) -->
+  <div class="w3-top">
+    <div class="w3-bar w3-white w3-card" id="myNavbar" style="padding: 0px 20px">
+      <a href="index.html" class="w3-bar-item w3-button w3-wide">
+        <span class="tlgMed">The Levanon Group</span> <span class="tlgSmall">LLC</span>   
+      </a>
+      <!-- Right-sided navbar links -->
+      <div class="w3-right w3-tiny w3-hide-small" style="margin-top: 10px">
+        <!-- <a href="#about" class="w3-bar-item w3-button">ABOUT US</a>
+        <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-home"></i> APARTMENT RENTAL CENTER</a> -->
+        <a href="#resident" class="w3-bar-item w3-button"><i class="fa fa-th"></i> RESIDENT</a>
+        <a href="#pros" class="w3-bar-item w3-button"><i class="fa fa-wrench"></i> CONTRACTOR</a>
+        <a href="#owners" class="w3-bar-item w3-button"><i class="fa fa-home"></i> PROPERTY OWNER</a>
+        <!-- <a href="#buy" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> SELL YOUR PROPERTY AT FULL VALUE</a> -->
+        <a href="contactGF.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT US</a>
+        <!-- <a href="getUser.php" class="w3-bar-item-w3-button"><i class="fa fa-navicon" style="padding-top: 13px"></i> -->
+        <a id="login" role="button" href="getUser.php" class="w3-bar-item w3-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-navicon"></i>
+          <?php if(isset($_SESSION['firstName'])){
+             echo $_SESSION['firstName'];
+          } else { echo "ACCOUNT";} 
+          ?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="login">
+          <form id="reg" method="post" action="getUser.php" class="px-4 py-3">
+            <div class="form-group">
+              <label for="eMail">Email address</label>
+              <input type="email" class="form-control" id="eMail" placeholder="email@example.com">
+            </div>
+            <div class="form-group">
+              <label for="pWord">Password</label>
+              <input type="password" class="form-control" id="pWord" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </form>
+          <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="registration.html">New user? Register Here</a>
+            <a class="dropdown-item" href="passReset.php">Forgot password?</a>
+          </div>
+        </div>
+      <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+  <p>
+  <!-- Sidebar on small screens when clicking the menu icon -->
+  <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+    <!-- <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About Us</a>
+    <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">Apartment Rentals</a> -->
+   <!--  <a href="#buy" onclick="w3_close()" class="w3-bar-item w3-button">Sell Your Property</a> -->
+    <a href="#resident" onclick="w3_close()" class="w3-bar-item w3-button">Current Resident</a>
+    <a href="index.html#pros" onclick="w3_close()" class="w3-bar-item w3-button">Service Pro's</a>
+    <a href="contactGF.html" onclick="w3_close()" class="w3-bar-item w3-button">Contact Us</a>
+  </nav>
+  
