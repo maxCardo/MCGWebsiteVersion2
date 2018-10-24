@@ -1,26 +1,22 @@
-  <!-- Navbar (sit on top) -->
+  <!-- Navbar (sits on top) -->
   <div class="w3-top">
     <div class="w3-bar w3-white w3-card" id="myNavbar" style="padding: 0px 20px">
       <a href="index.html" class="w3-bar-item w3-button w3-wide">
-        <span class="tlgMed">The Levanon Group</span> <span class="tlgSmall">LLC</span>   
+        <span class="tlgMed">Max Cardo</span> <span class="tlgSmall">LLC</span>   
       </a>
       <!-- Right-sided navbar links -->
       <div class="w3-right w3-tiny w3-hide-small" style="margin-top: 10px">
-        <!-- <a href="#about" class="w3-bar-item w3-button">ABOUT US</a>
-        <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-home"></i> APARTMENT RENTAL CENTER</a> -->
         <a href="#resident" class="w3-bar-item w3-button"><i class="fa fa-th"></i> RESIDENT</a>
         <a href="#pros" class="w3-bar-item w3-button"><i class="fa fa-wrench"></i> CONTRACTOR</a>
         <a href="#owners" class="w3-bar-item w3-button"><i class="fa fa-home"></i> PROPERTY OWNER</a>
-        <!-- <a href="#buy" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> SELL YOUR PROPERTY AT FULL VALUE</a> -->
         <a href="contactGF.html" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT US</a>
-        <!-- <a href="getUser.php" class="w3-bar-item-w3-button"><i class="fa fa-navicon" style="padding-top: 13px"></i> -->
-        <a id="login" role="button" href="getUser.php" class="w3-bar-item w3-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-navicon"></i>
-          <?php if(isset($_SESSION['firstName'])){
-             echo $_SESSION['firstName'];
-          } else { echo "ACCOUNT";} 
-          ?>
+        <a id="login" class="w3-bar-item w3-button dropdown-toggle" aria-haspopup="true" aria-expanded="false"><i class="fa fa-navicon"></i>
+            <?php if(isset($_SESSION['user'])){
+             echo $_SESSION['user'];
+            } else { echo "ACCOUNT";} 
+            ?>
         </a>
-        <div class="dropdown-menu" aria-labelledby="login">
+        <div id="loginMenu" class="dropdown-menu" aria-labelledby="login" type="hidden">
           <form id="reg" method="post" action="getUser.php" class="px-4 py-3">
             <div class="form-group">
               <label for="eMail">Email address</label>
@@ -55,3 +51,12 @@
     <a href="contactGF.html" onclick="w3_close()" class="w3-bar-item w3-button">Contact Us</a>
   </nav>
   
+  <script>
+    var button = $("#login");
+    var popMenu = $("#loginMenu");
+
+    button.click(function(){
+          popMenu.show();
+          var popper = new Popper(button,popMenu);
+        });
+  </script>

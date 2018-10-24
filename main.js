@@ -7,8 +7,6 @@ var vendorCenter = ["conv1.html","comingSoon.html"];
 var sellHome = ["conv1.html","sellYourHomeGF.html"];
 //var webPay = ["conv1.html",""];
  
-
-
 //links for scroll down to section (action not tracked on GA) or link to another page on site
 var alreadyRes = "index.html#resident";
 var srvsRqst = "ServiceRequestGF.html";
@@ -44,7 +42,6 @@ function  buttonLinkDelay(arg){
 	//window.open(arg,'_top');
 }
 
-
 function buttonScroll(arg){
 	window.open(arg, '_top');
 }
@@ -68,3 +65,5 @@ function validate(input){
 		var regex = /[^a-z0-9]/gi;
 		input.value = input.value.replace(regex, "");
 	}
+
+window.Popper = require('popper.js').default;

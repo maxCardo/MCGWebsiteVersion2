@@ -9,29 +9,24 @@
 		$email = mysqli_real_escape_string($conn, $_POST['email']);
 		$ph1 = mysqli_real_escape_string($conn, $_POST['phone1']);
 		$ph2 = mysqli_real_escape_string($conn, $_POST['phone2']);
-		$uName = mysqli_real_escape_string($conn, $_POST['userName']);
 		$pass = mysqli_real_escape_string($conn, $_POST['password']);
-		$sql = "INSERT INTO master_Siteuser(siteuser_first, siteuser_last, siteuser_email, siteuser_username, siteuser_password, siteuser_phone1, siteuser_phone2, fk_hdyhau_id, fk_usertype_id) VALUES ('".$first."','".$last."','".$email."','".$uName."',MD5('".$pass."'),'".$ph1."','".$ph2."',".$_POST['hdyhau'].", 2)";
+		$bytSched = $_POST['s1'] . $_POST['s2'] . $_POST['s3'] . $_POST['s4'] . $_POST['s5'] . $_POST['s6'] . $_POST['s7'] . $_POST['s8'] . $_POST['s9'] . $_POST['s10'] . $_POST['s11'] . $_POST['s12'] . $_POST['s13'] . $_POST['s14'] . $_POST['s15'] . $_POST['s16'] . $_POST['s17'] . $_POST['s18'] . $_POST['s19'] . $_POST['s20'] . $_POST['s21'];
+		$hexSched = dechex(bindec($bytSched));
+		$sql = "INSERT INTO master_Siteuser(siteuser_first, siteuser_last, siteuser_email, siteuser_password, siteuser_phone1, siteuser_phone2, fk_hdyhau_id, fk_usertype_id) VALUES ('".$first."','".$last."','".$email."',MD5('".$pass."'),'".$ph1."','".$ph2."',".$_POST['hdyhau'].", 2)";
 		if ($conn->query($sql) !== TRUE)
 			echo "Error: " . $sql . "<br>" . $conn->error;
-		$_SESSION['id'] = mysqli_fetch_assoc($conn->query("SELECT siteuser_id FROM master_Siteuser WHERE siteuser_username = '" . $uName . "'"));
 	//On second pass through PHP, data from con-registration is pushed to MySQL, matching on session[id]  
 	} else if (isset($_POST['street'])) {
-		$st1 = mysqli_real_escape_string($conn, $_POST['street']);
-		$st2 = mysqli_real_escape_string($conn, $_POST['street2']);
-		$city = mysqli_real_escape_string($conn, $_POST['city']);
-		$state = mysqli_real_escape_string($conn, $_POST['state']);
-		$sql = "INSERT INTO user_Address(address_line1, address_line2, address_city, address_state) VALUES ('" . $st1 . "','" . $st2 . "','" . $city . "','" . $state . "'')";
+		$st = mysqli_real_escape_string($conn, $_POST['street']);
+		$cit = mysqli_real_escape_string($conn, $_POST['city']);
+		$stat = mysqli_real_escape_string($conn, $_POST['state']);
+		$sql = "INSERT INTO user_Address(address_street, address_city, address_state) VALUES (" . $st . "," . $cit . "," . $stat . ")";
 		if ($conn->query($sql) !== TRUE)
 			echo "Error: " . $sql . "<br>" . $conn->error;
 		$mAdd = mysqli_fetch_assoc($conn->query("SELECT max(address_id) as mAdd FROM user_Address"));
-		$conn->query("UPDATE master_Siteuser SET fk_address_id = " . $mAdd . " WHERE siteuser_id = " . $SESSION['id']);
-		$bytSched = $_POST['21'] . $_POST['20'] . $_POST['19'] . $_POST['18'] . $_POST['17'] . $_POST['16'] . $_POST['15'] . $_POST['14'] . $_POST['13'] . $_POST['12'] . $_POST['11'] . $_POST['10'] . $_POST['9'] . $_POST['8'] . $_POST['7'] . $_POST['6'] . $_POST['5'] . $_POST['4'] . $_POST['3'] . $_POST['2'] . $_POST['1'];
-		$hexSched = $bytSched.toString(16);
-		$
-		$conn->query($sql);
 		$result = $conn->query("SELECT max(address_id) as mAdd FROM user_Address");
 		$row = mysqli_fetch_assoc($result);
+		$conn->query($sql);
 		$conn->close();
 		$_SESSION['user'] = $_POST['first'];
 		header('Location: index.html');
@@ -61,8 +56,6 @@
 			<label class="form-control-label" for="address">Billing Address</label><br>
 			<input required class="form-control" id="street" name="street" type="text" maxlength="60" placeholder="Address Line 1"/> 
 			<br>
-			<input class="form-control" id="street2" name="street2" type="text" maxlength="30" placeholder="Address Line 2"/>
-			<br> 
 			<input required id="city" style="width:73%" class="form-control-sm" name="city" type="text" maxlength="30" placeholder="City"/>
 			<input required class="form-control-sm" maxlength="2" style="width:25%" name="state" value="PA" placeholder="State">
 			<br>
@@ -108,61 +101,7 @@
 				<label><input type="checkbox" id="dsgn" value="13" name ="services"/> Interior Design</label>
 			</div>
 			<br>
-			<hr>
-			<h4>Enter your typical weekly availability</h4>
-			<table style="width:40%">
-				<tr class="colHead">
-					<td></td>
-					<th>Morning</th>
-					<th>Afternoon</th>
-					<th>Evening</th>
-				</tr>
-				<tr>
-					<th class="rowHead">Monday</th>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="1" class="tblinputs"></input></td>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="2" class="tblinputs"></input></td>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="3" class="tblinputs"></input></td>
-				</tr>
-				<tr>
-					<th class="rowHead">Tuesday</th>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="4" class="tblinputs"></input></td>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="5" class="tblinputs"></input></td>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="6" class="tblinputs"></input></td>
-				</tr>
-				<tr>
-					<th class="rowHead">Wednesday</th>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="7" class="tblinputs"></input></td>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="8" class="tblinputs"></input></td>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="9" class="tblinputs"></input></td>
-				</tr>
-				<tr>
-					<th class="rowHead">Thursday</th>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="10" class="tblinputs"></input></td>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="11" class="tblinputs"></input></td>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="12" class="tblinputs"></input></td>
-				</tr>
-				<tr>
-					<th class="rowHead">Friday</th>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="13" class="tblinputs"></input></td>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="14" class="tblinputs"></input></td>
-					<td><input type="checkbox" Checked data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="15" class="tblinputs"></input></td>
-				</tr>
-				<tr>
-					<th class="rowHead">Saturday</th>
-					<td><input type="checkbox" data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="16" class="tblinputs"></input></td>
-					<td><input type="checkbox" data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="17" class="tblinputs"></input></td>
-					<td><input type="checkbox" data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="18" class="tblinputs"></input></td>
-				</tr>
-				<tr>
-					<th class="rowHead">Sunday</th>
-					<td><input type="checkbox" data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="19" class="tblinputs"></input></td>
-					<td><input type="checkbox" data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="20" class="tblinputs"></input></td>
-					<td><input type="checkbox" data-toggle="toggle" data-on="Available" data-off="Unavailable" data-onstyle="success" data-offstyle="danger"value=1 id="21" class="tblinputs"></input></td>
-				</tr>
-			</div>
-			</table>
-			<br>
-			<p>
+			<?php include("week_availability.html"); ?>
 			<input type="submit" name="submit" value="Submit Registration" />
 		</form>
 	</div>
