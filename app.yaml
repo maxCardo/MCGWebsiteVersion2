@@ -8,7 +8,6 @@ entrypoint: serve index.php
 api_version: 1
 runtime_config:
   document_root: .
-  skip_files: xyz.htaccess.php
 
 handlers:
 # Serve PHP
