@@ -1,5 +1,9 @@
-runtime: php55
-env: flex
+runtime: php72
+env_variables:
+  GOOGLE_STORAGE_BUCKET: mcgstorage
+  MYSQL_DSN: mysql:unix_socket=/cloudsql/mcgcloudsql;dbname=MCGDB
+  MYSQL_USER: root
+  MYSQL_PASSWORD: Gs!9#4fv16+Ll
 entrypoint: serve index.php
 api_version: 1
 runtime_config:
