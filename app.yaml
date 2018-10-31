@@ -5,7 +5,6 @@ handlers:
 # Splash Page
 - url: /.*
   script: index.html
-  application_readable: true
 
 # Serve images as static resources
 - url: /(.+\.(gif|png|jpg))$
