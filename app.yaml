@@ -1,9 +1,9 @@
 runtime: php72
 env_variables:
   GOOGLE_STORAGE_BUCKET: mcgstorage
-  MYSQL_DSN: mysql:unix_socket=/cloudsql/mcgcloudsql;dbname=MCGDB
-  MYSQL_USER: root
-  MYSQL_PASSWORD: Gs!9#4fv16+Ll
+  MYSQL_DSN: mysql:unix_socket=/cloudsql/mcgtechdb1;dbname=Site_Users
+  MYSQL_USER: webguest
+  MYSQL_PASSWORD: M2Ykx19P!rm&
 entrypoint: serve index.php
 api_version: 1
 runtime_config:
@@ -11,7 +11,7 @@ runtime_config:
 
 handlers:
 # Serve PHP
-- url: /(.+\.php)$
+- url: /*.php
   script: \1
 
 # Serve images as static resources
