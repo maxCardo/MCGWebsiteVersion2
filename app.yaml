@@ -17,6 +17,4 @@ handlers:
 
 # Splash Page
 - url: .*
-  script: auto
-  
-
+  script: index.php
