@@ -11,7 +11,7 @@ runtime_config:
 
 handlers:
 # Serve PHP
-- url: \*.php
+- url: /.php
   script: \1
 
 # Serve css
@@ -24,6 +24,6 @@ handlers:
   upload: .+\.(gif|png|jpg|jpeg)$
 
 # Catchall
-- url: \.*
+- url: /.*
   script: auto
 
