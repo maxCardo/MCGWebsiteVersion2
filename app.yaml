@@ -1,17 +1,18 @@
-runtime: php72
+runtime: php55
 env_variables:
   GOOGLE_STORAGE_BUCKET: mcgstorage
   MYSQL_DSN: mysql:unix_socket=/cloudsql/mcgtechdb1;dbname=Site_Users
   MYSQL_USER: webguest
   MYSQL_PASSWORD: M2Ykx19P!rm&
 entrypoint: serve index.php
+api_version: 1
 runtime_config:
   document_root: .
 
 handlers:
 # Serve PHP
 - url: /(.+\.php)$
-  script: auto
+  script: \1
 
 # Serve css
 - url: /stylesheets
