@@ -11,10 +11,20 @@ runtime_config:
 
 handlers:
 # Serve PHP
-- url: /*.php
+- url: /(.+\.php)$
   script: \1
+
+# Serve css
+- url: /stylesheets
+  static_dir: stylesheets
 
 # Serve images as static resources
 - url: /(.+\.(gif|png|jpg|jpeg))$
   static_files: \1
   upload: .+\.(gif|png|jpg|jpeg)$
+  application_readable: true
+
+# Catchall
+- url: /.*
+  script: auto
+
