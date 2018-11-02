@@ -8,7 +8,7 @@ env_variables:
 handlers:
 # Serve PHP
 - url: /.php
-  script: \1
+  script: auto
 
 # Serve everything else
 - url: /.*
