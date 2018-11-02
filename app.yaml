@@ -22,7 +22,6 @@ handlers:
 - url: /(.+\.(gif|png|jpg|jpeg))$
   static_files: \1
   upload: .+\.(gif|png|jpg|jpeg)$
-  application_readable: true
 
 # Catchall
 - url: /.*
