@@ -11,7 +11,7 @@ runtime_config:
 handlers:
 # Serve PHP
 - url: /(.+\.php)$
-  script: \1
+  script: auto
 
 # Serve css
 - url: /stylesheets
