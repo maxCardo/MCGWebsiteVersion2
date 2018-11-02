@@ -1,6 +1,10 @@
 runtime: php72
+vm: true
+api_version: 1
+runtime_config:
+  document_root: CRDO
 env_variables:
-  GOOGLE_STORAGE_BUCKET: mcgstorage
+  GOOGLE_STORAGE_BUCKET: staging.stoked-energy-210523.appspot.com
   MYSQL_DSN: mysql:unix_socket=/cloudsql/mcgtechdb1;dbname=Site_Users
   MYSQL_USER: webguest
   MYSQL_PASSWORD: M2Ykx19P!rm&
