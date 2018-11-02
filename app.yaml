@@ -6,15 +6,11 @@ env_variables:
   MYSQL_PASSWORD: M2Ykx19P!rm&
 
 handlers:
-# Serve Css
-- url: /stylesheets
-  static_dir: stylesheets
+# Serve PHP
+- url: /.php
+  script: \1
 
-# Serve images as static resources
-- url: /(.+\.(gif|png|jpg|jpeg))$
-  static_files: \1
-  upload: .+\.(gif|png|jpg|jpeg)$
+# Serve everything else
+- url: /.*
+  static_dir: CRDO
 
-# Serve other pages
-- url: .*
-  script: auto
