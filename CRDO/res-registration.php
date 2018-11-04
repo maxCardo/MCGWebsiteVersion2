@@ -53,7 +53,7 @@
 			<label class="form-control-label">State </label>
 			<br>
 			<input class="form-control-sm" size="3" maxlength="2" name="state"> 
-			<?php include("week_availability.html"); ?>
+			<?php include("week_availability.php"); ?>
 			<p>
 			<input id="submitButton" class="button_text" type="submit" name="submit" value="Submit Registration"/>
 		</form>
