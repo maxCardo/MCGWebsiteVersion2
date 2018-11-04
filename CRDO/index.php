@@ -1,6 +1,6 @@
 <?php include("PageElements/header.html"); 
 include("PageElements/navbar.html"); ?>
-<title>Max Cardo</title>
+<title>CRDO</title>
 
 <body id="mainBody" class="formBody">
   <div class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
