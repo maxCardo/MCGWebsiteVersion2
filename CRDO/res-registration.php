@@ -3,8 +3,7 @@
   $dsn = getenv('MYSQL_DSN');
   $cUser = getenv('MYSQL_USER');
   $cPass = getenv('MYSQL_PASSWORD');
-  $conn = new PDO('mysql:dbname=Site_Users;unix-socket=/cloudsql/stoked-energy-210523:us-east1:mcgtechdb1','webguest','M2Ykx19P!rm&');
-  //$conn = new PDO($dsn, $cUser, $cPass);
+  $conn = new PDO($dsn,$cUser,$cPass);
 
   //$conn = new mysqli("35.231.20.242","webguest","M2Ykx19P!rm&", "Site_Users");
 	if(isset($_POST['street'])){
