@@ -5,11 +5,11 @@ runtime_config:
   document_root: CRDO
 env_variables:
   GOOGLE_STORAGE_BUCKET: staging.stoked-energy-210523.appspot.com
-  cloudsql_connection_name: stoked-energy-210523:us-east1:mcgtechdb1
-  cloudsql_database_name: Site_Users
-  cloudsql_user: webguest
-  cloudsql_password: M2Ykx19P!rm&
-  cloudsql_port: 3306
+  MYSQL_DSN: mysql:dbname=Site_Users;unix-socket=/cloudsql/stoked-energy-210523:us-east1:mcgtechdb1
+  MYSQL_USER: webguest
+  MYSQL_PASSWORD: M2Ykx19P!rm&
+beta_settings:
+  cloud_sql_instances: "stoked-energy-210523:us-east1:mcgtechdb1"
 
 handlers:
 # Serve PHP
@@ -19,4 +19,3 @@ handlers:
 # Serve everything else
 - url: /.*
   static_dir: CRDO
-

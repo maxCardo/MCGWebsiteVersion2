@@ -1,5 +1,9 @@
-  <?php	
-	$conn = new mysqli("35.231.20.242","webguest","M2Ykx19P!rm&", "Site_Users");
+  <?php
+  $dsn = getenv('MYSQL_DSN');
+  $cUser = getenv('MYSQL_USER');
+  $cPass = getenv('MYSQL_PASSWORD');
+  $conn = new PDO($dsn, $cUser, $cPass);
+  //$conn = new mysqli("35.231.20.242","webguest","M2Ykx19P!rm&", "Site_Users");
 	if(isset($_POST['street'])){
 		$firNm = mysqli_real_escape_string($conn, $_POST['first']);
 		$lstNm = mysqli_real_escape_string($conn, $_POST['last']);
@@ -17,7 +21,7 @@
 		$conn->query($sql);
 		$result = $conn->query("SELECT max(address_id) as mAdd FROM user_Address WHERE address_street = '" . $st . "'");
 		$row = mysqli_fetch_assoc($result);
-		// SQL INSERTION INTO fk_address_id field of user_Site 
+		// SQL INSERTION INTO fk_address_id field of user_Site
 		$sql = "INSERT INTO master_Siteuser(siteuser_first, siteuser_last, siteuser_email, siteuser_phone1, siteuser_phone2, fk_hdyhau_id, fk_usertype_id, siteuser_optin, fk_address_id, siteuser_password, siteuser_availability) VALUES ('".$firNm."','".$lstNm."','".$email."','".$_POST['phone1'] ."','".$_POST['phone2'] ."',".intVal($_POST['hdyhau']) .",1,". intVal($_POST['optIn']).",".$row["mAdd"].",MD5('".$pss."'),'".$hexSched."')";
 		if ($conn->query($sql) !== TRUE)
 			echo "Error: " . $sql . "<br>" . $conn->error;
@@ -27,7 +31,7 @@
 	}
 ?>
 
-<?php include("PageElements/header.html"); 
+<?php include("PageElements/header.html");
 	include("PageElements/navbar.html"); ?>
 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
@@ -45,14 +49,14 @@
 			<input type="hidden" name="hdyhau" value="<?php echo $_POST['hdyhau'];?>">
 			<input type="hidden" name="optIn" value="<?php echo $_POST['optIn'];?>">
 			<label class="form-control-label">Address </label>
-			<input name="street" class="form-control" type="text" maxlength="80"/> 
+			<input name="street" class="form-control" type="text" maxlength="80"/>
 			<br>
 			<label class="form-control-label">City </label>
 			<input name="city" class="form-control" type="text" maxlength="40"/>
-			<br>							    
+			<br>
 			<label class="form-control-label">State </label>
 			<br>
-			<input class="form-control-sm" size="3" maxlength="2" name="state"> 
+			<input class="form-control-sm" size="3" maxlength="2" name="state">
 			<?php include("week_availability.php"); ?>
 			<p>
 			<input id="submitButton" class="button_text" type="submit" name="submit" value="Submit Registration"/>
